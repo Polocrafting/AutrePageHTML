@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  <div id="circle1" class="circle1"></div>
+  <div id="circle2" class="circle2"></div>
+  <div id="circle3" class="circle3"></div>
+  <div id="body" class="body"></div>
+  <button id="changeColorBtn" class="change-color-btn">Couleurs aléatoire </button>
+  <button id="changeColorBtn1" class="change-color-btn1">Démarrer l'annimation</button>
+  <button id="plan" class="planni">Masquer</button>
+<div id="color-palette">
+    <div id="color-selector">
+        <div id="selected-color" style="background-color: #000000;"></div>
+    </div><form>
+    <red>Rouge :  </red><input type="range" min="0" max="255" value="0" id="red-slider" onchange="updateCircleColor(temp)">
+    <p id="rd">0</p>
+    <gre>Vert     :  </gre><input type="range" min="0" max="255" value="0" id="green-slider" onchange="updateCircleColor(temp)">
+    <p id="vt">0</p>
+    <blu>Bleu    :  </blu><input type="range" min="0" max="255" value="255" id="blue-slider" onchange="updateCircleColor(temp)">
+    <p id="bu">255</p>
+    Transparence    :  <input type="range" min="0" max="100" value="50" id="alpha" onchange="updateCircleColor(temp)">
+    <p id="tr">0.5</p>
+ <br>
+
+  </form>
+   <button id="val" onclick="valid()" style="position: absolute; right: 0px; bottom: -18px;">Annuler </button>
+</div>
+<div id="perso">
+
+</div>
+</body>
+<html>
+
+
+ <script>
+
+
+
+
+function valid() {                
+          document.getElementById("show-palette-btn1").disabled = false;
+          document.getElementById("show-palette-btn2").disabled = false;
+          document.getElementById("show-palette-btn3").disabled = false;
+          document.getElementById("couleursfond").disabled = false;
+          document.getElementById("changeColorBtn").disabled = false;
+          document.getElementById("changeColorBtn1").disabled = false;
+          //document.getElementById("show-palette-btn4").disabledfalse false;
+          document.getElementById("color-palette").style.display = "none";
+          document.getElementById("red-slider").value = 0;
+          document.getElementById("green-slider").value = 0;
+          document.getElementById("blue-slider").value = 255;
+          document.getElementById("alpha").value = 50;
+          document.getElementById("val").innerHTML = "Annuler";
+              document.getElementById("rd").innerHTML = "0";
+        document.getElementById("vt").innerHTML = "0";
+            document.getElementById("bu").innerHTML = "255";
+                document.getElementById("tr").innerHTML = "0.5";
+                document.getElementById("show-palette-btn1").style.color = "black";
+                document.getElementById("show-palette-btn2").style.color = "black";
+                document.getElementById("show-palette-btn3").style.color = "black";
+
+    }
+var eventCount = 2;
+
+document.getElementById("plan").onclick = function() {
+    if (eventCount === 1) {
+        document.getElementById("changeColorBtn1").style.display = "block";
+        document.getElementById("changeColorBtn").style.display = "block";
+        document.getElementById("Choix-colors").style.display = "block";
+
+
+        this.innerHTML = "Masquer";
+        eventCount = 2;
+    } else {
+        document.getElementById("changeColorBtn1").style.display = "none";
+        document.getElementById("changeColorBtn").style.display = "none";
+        document.getElementById("Choix-colors").style.display = "none";
+
+
+
+        this.innerHTML = "Modifier";
+        eventCount = 1;
+    }
+};
+
+
+
+  var changeColorBtn = document.getElementById("changeColorBtn");
+  var colors = ["rgba(255, 0, 0, 0.5)", "rgba(0, 255, 0, 0.5)", "rgba(0, 0, 255, 0.5)", "rgba(255, 240, 0, 0.5)", "rgba(255, 0, 255, 0.5)", "rgba(0, 255, 255, 0.5)","rgba(255, 145, 0, 0.5)","rgba(180, 0, 255, 0.5)","rgba(255, 255, 255, 0.5)","rgba(100, 100, 100, 0.5)"];
+  var colors2 = ["rgba(0, 0, 0, 1)", "rgba(40, 40, 40, 1)", "rgba(0, 0, 70, 1)", "rgba(100, 0, 0, 1)", "rgba(0, 50, 0, 1)", "rgba(100, 40, 0, 1)","rgba(0, 70, 70, 1)","rgba(100, 0, 100, 1)","rgba(60, 0, 100, 1)"];
+  changeColorBtn.addEventListener("click", function() {
+    var randomColor1 = colors[Math.floor(Math.random() * colors.length)];
+    var randomColor2 = colors[Math.floor(Math.random() * colors.length)];
+    var randomColor3 = colors[Math.floor(Math.random() * colors.length)];
+    var bg = colors2[Math.floor(Math.random() * colors.length)];
+    document.documentElement.style.setProperty('--circle1-color', randomColor1);
+    document.documentElement.style.setProperty('--circle2-color', randomColor2);
+    document.documentElement.style.setProperty('--circle3-color', randomColor3);
+    document.body.style.backgroundColor = bg;
+
+  });
+
+
+
+var temp =0;
+    function updateCircleColor(circleId) {
+
+
+        var red = document.getElementById("red-slider").value;
+        var green = document.getElementById("green-slider").value;
+        var blue = document.getElementById("blue-slider").value;
+        var alpha = (document.getElementById("alpha").value)/100;
+    document.getElementById("rd").innerHTML = red;
+        document.getElementById("vt").innerHTML = green;
+            document.getElementById("bu").innerHTML = blue;
+                document.getElementById("tr").innerHTML = alpha;
+        var selectedColor = "rgba(" + red + "," + green + "," + blue + ","+ alpha +")";
+      var circleElement = '--circle'+ circleId +'-color' 
+      document.documentElement.style.setProperty(circleElement, selectedColor);
+       document.getElementById("val").innerHTML = "Valider";
+
+
+    }
+
+        function AFF(circleId) {
+        temp = circleId;
+          document.getElementById("color-palette").style.display = "block";
+          document.getElementById("show-palette-btn1").disabled = true;
+          document.getElementById("show-palette-btn2").disabled = true;
+          document.getElementById("show-palette-btn3").disabled = true;
+          document.getElementById("couleursfond").disabled = true;
+          document.getElementById("changeColorBtn").disabled = true;
+          document.getElementById("changeColorBtn1").disabled = true;
+          //document.getElementById("show-palette-btn4").disabled = true;
+          if (circleId==1) {document.getElementById("show-palette-btn1").style.color = "white";}
+          if (circleId==2) {document.getElementById("show-palette-btn2").style.color = "white";}
+          if (circleId==3) {document.getElementById("show-palette-btn3").style.color = "white";}
+
+    }
+
+function BGC(selectElement) {
+  var bg = selectElement.value;
+  document.body.style.backgroundColor = bg;
+}
+
+
+    var Colorgrad1 , Colorgrad2, Colorgrad3;
+    var intervalId;
+    var r1 = 255, g1 = 0, b1 = 0;
+    var r2 = 0, g2 = 255, b2 = 0;
+    var r3 = 0, g3 = 0, b3 = 255;
+    var count = 0, count2 = 0, count3=0;
+    document.getElementById("changeColorBtn1").onclick = function() {
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+            this.innerHTML = "Démarrer l'annimation";
+          document.getElementById("changeColorBtn").disabled = false;
+          document.getElementById("show-palette-btn1").disabled = false;
+          document.getElementById("show-palette-btn2").disabled = false;
+          document.getElementById("show-palette-btn3").disabled = false;
+
+        } else {
+          document.getElementById("changeColorBtn").disabled = true;
+          document.getElementById("show-palette-btn1").disabled = true;
+          document.getElementById("show-palette-btn2").disabled = true;
+          document.getElementById("show-palette-btn3").disabled = true;
+          //document.getElementById("couleursfond").disabled = true;
+            intervalId = setInterval(function(){
+                switch (count) {
+                  //Boul 1
+                        case 0:
+                        r1 -= 1;
+                        g1 += 1;
+                        if (g1 === 256) {
+                            count += 1;
+                        }
+                        break;
+                        case 1:
+                        g1 -= 1;
+                        b1 += 1;
+                        if (b1 === 256) {
+                          count += 1;
+                        }
+                        break;
+                        case 2:
+                        b1 -= 1;
+                        r1 += 1;
+                        if (r1 === 256) {
+                        count += 1;
+                        }
+                        break;
+                        case 3:
+                        r1 -= 1;
+                        g1 += 1;
+                        if (g1 === 256) {
+                        count += 1;
+                        }
+                        break;
+                        case 4:
+                        g1 -= 1;
+                        b1 += 1;
+                        if (b1 === 256) {
+                        count += 1;
+                        }
+                        break;
+                        case 5:
+                        b1 -= 1;
+                        r1 += 1;
+                        if (r1 === 256) {
+                        count = 0;
+                        }
+                        break;
+                        }
+                        switch (count2) {
+                                          //Boul 2
+                        case 0:
+                        r2 -= 1;
+                        g2 += 1;
+                        if (g2 === 256) {
+                            count2 += 1;
+                        }
+                        break;
+                        case 1:
+                        g2 -= 1;
+                        b2 += 1;
+                        if (b2 === 256) {
+                          count2 += 1;
+                        }
+                        break;
+                        case 2:
+                        b2 -= 1;
+                        r2 += 1;
+                        if (r2 === 256) {
+                        count += 1;
+                        }
+                        break;
+                        case 3:
+                        r2 -= 1;
+                        g2 += 1;
+                        if (g2 === 256) {
+                        count2 += 1;
+                        }
+                        break;
+                        case 4:
+                        g2 -= 1;
+                        b2 += 1;
+                        if (b2 === 256) {
+                        count2 += 1;
+                        }
+                        break;
+                        case 5:
+                        b2 -= 1;
+                        r2 += 1;
+                        if (r2 === 256) {
+                        count2 = 0;
+                        }
+                        break;
+                        }
+                                          //Boul 3
+                         switch (count3) {
+                        case 0:
+                        r3 -= 1;
+                        g3 += 1;
+                        if (g3 === 256) {
+                            count3 += 1;
+                        }
+                        break;
+                        case 1:
+                        g3 -= 1;
+                        b3 += 1;
+                        if (b3 === 256) {
+                          count3 += 1;
+                        }
+                        break;
+                        case 2:
+                        b3 -= 1;
+                        r3 += 1;
+                        if (r3 === 256) {
+                        count3 += 1;
+                        }
+                        break;
+                        case 3:
+                        r3 -= 1;
+                        g3 += 1;
+                        if (g3 === 256) {
+                        count3 += 1;
+                        }
+                        break;
+                        case 4:
+                        g3 -= 1;
+                        b3 += 1;
+                        if (b3 === 256) {
+                        count3 += 1;
+                        }
+                        break;
+                        case 5:
+                        b3 -= 1;
+                        r3 += 1;
+                        if (r3 === 256) {
+                        count3 = 0;
+                        }
+                        break;
+                        }
+
+
+                        Colorgrad1 = "rgba(" + r1 + "," + g1 + "," + b1 + ", 0.5)";
+                        Colorgrad2 = "rgba(" + r2 + "," + g2 + "," + b2 + ", 0.5)";
+                        Colorgrad3 = "rgba(" + r3 + "," + g3 + "," + b3 + ", 0.5)";
+                        // met à jour les propriétés css des éléments avec les nouvelles valeurs de r1, g1, b1, r2, g2, b2, r3, g3, b3
+                        document.documentElement.style.setProperty('--circle1-color', Colorgrad1);
+                        document.documentElement.style.setProperty('--circle2-color', Colorgrad2);
+                        document.documentElement.style.setProperty('--circle3-color', Colorgrad3);
+                        }, 30);
+                        this.innerHTML = "Arrêter l'annimation";
+                        }
+                        };
+
+
+
+
+
+
+  </script>
+
+
+<meta charset="utf-8">
+<title></title>
+
+<style type="text/css">
+
+:root {
+  --circle1-color: rgba(0, 0, 255, 0.5);
+  --circle2-color: rgba(0, 0, 255, 0.5);
+  --circle3-color: rgba(0, 0, 255, 0.5);
+  --bg: rgba(0, 0, 0, 1);
+}
+::selection {
+   background-color: black;
+}
+
+body {
+overflow: hidden;
+-ms-content-zooming: none;
+-ms-high-contrast-adjust: none;
+
+}
+
+
+.scene {
+position: absolute;
+}
+.scene-part {
+position: absolute;
+left: 0px;
+top: 0px;
+}
+
+body {
+color: #fff;
+background-color: var(--bg);
+}
+
+@keyframes circle1Path {
+0%{
+top:50vh;
+left:50vw;
+width:5vw;
+height:5vw;
+opacity:0.5;
+}
+50%{
+top:0vh;
+left:45vw;
+width:60vw;
+height:60vw;
+opacity: 1;
+}
+100%{
+top:50vh;
+left:50vw;
+width:5vw;
+height:5vw;
+opacity:0.5;
+}
+}
+@keyframes circle2Path {
+0%{
+top:40vh;
+left:45vw;
+width:15vw;
+height:15vw;
+}
+50%{
+top:37vh;
+left:-10vw;
+width:80vw;
+height:80vw;
+}
+100%{
+top:40vh;
+left:45vw;
+width:15vw;
+height:15vw;
+}
+}
+@keyframes circle3Path {
+0%{
+top:30vh;
+left:30vw;
+width:25vw;
+height:25vw;
+}
+50%{
+top:-50vh;
+left:-20vw;
+width:120vw;
+height:120vw;
+}
+100%{
+top:30vh;
+left:30vw;
+width:25vw;
+height:25vw;
+}
+}
+
+}
+@keyframes fadeIn {
+0%{
+opacity: 0;
+}
+}
+@keyframes fadeCircleIn{
+0%{
+opacity:0;
+}
+100%{
+opacity: 1;
+}
+}
+.circle1{
+position: absolute;
+animation: circle1Path 15s infinite, fadeCircleIn 1332ms ease-out;
+border-radius: 100vw;
+background: radial-gradient(50% 50% at 50% 50%, var(--circle1-color) 15.62%, rgba(0, 50, 255, 0) 100%);
+}
+.circle2{
+position: absolute;
+animation: circle2Path 20s infinite, fadeCircleIn 1332ms ease-out;
+border-radius: 100vw;
+background: radial-gradient(50% 50% at 50% 50%, var(--circle2-color) 15.62%, rgba(0, 50, 255, 0) 100%);
+}
+.circle3{
+position: absolute;
+animation: circle3Path 30s infinite, fadeCircleIn 1332ms ease-out;
+border-radius: 100vw;
+background: radial-gradient(50% 50% at 50% 50%, var(--circle3-color) 15.62%, rgba(0, 50, 255, 0) 100%);
+}
+
+header {
+  position: absolute ;
+  bottom: 0;
+  width: 100%;
+  color: lightgrey;
+}
+
+b {
+  color: red;
+}
+.change-color-btn {
+  position: absolute; /*permet de placer le bouton absolument*/
+  bottom: 52.5px; /*place le bouton en bas de la page*/
+  left: 20px; /*place le bouton à gauche de la page (si vous voulez le mettre à droite, utilisez right: 0;)*/
+  z-index: 1; /*mettre le bouton en premier plan*/
+}
+.change-color-btn1 {
+  position: absolute; /*permet de placer le bouton absolument*/
+  bottom: 85px; /*place le bouton en bas de la page*/
+  left: 20px; /*place le bouton à gauche de la page (si vous voulez le mettre à droite, utilisez right: 0;)*/
+  z-index: 1; /*mettre le bouton en premier plan*/
+}
+.planni {
+  position: absolute; /*permet de placer le bouton absolument*/
+  bottom: 0px; /*place le bouton en bas de la page*/
+  right: 0px; /*place le bouton à gauche de la page (si vous voulez le mettre à droite, utilisez right: 0;)*/
+  z-index: 1; /*mettre le bouton en premier plan*/
+}
+#color-palette {
+   display: none;
+  position: absolute; /*permet de placer le bouton absolument*/
+  bottom: 135px; /*place le bouton en bas de la page*/
+  left:130px; /*place le bouton à gauche de la page (si vous voulez le mettre à droite, utilisez right: 0;)*/
+  z-index: 1; /*mettre le bouton en premier plan*/
+}
+}
+.perso{
+  position: absolute; /*permet de placer le bouton absolument*/
+  bottom: 85px; /*place le bouton en bas de la page*/
+  left: 20px; /*place le bouton à gauche de la page (si vous voulez le mettre à droite, utilisez right: 0;)*/
+  z-index: 1; /*mettre le bouton en premier plan*/
+}
+red{
+  color: red}
+gre{
+  color: green}
+blu{
+  color: blue}
+</style>
+<body>
+<div id='Choix-colors'>
+
+  <header>
+  <!--Select box for circle 1-->
+
+
+     <button id="show-palette-btn1" onclick="AFF('1')">Coul-Sph-1 </button>
+
+<p>
+  <!--Select box for circle 2-->
+       <button id="show-palette-btn2" onclick="AFF('2')">Coul-Sph-2 </button>
+
+<p>
+     <button id="show-palette-btn3" onclick="AFF('3')">Coul-Sph-3 </button>
+  <!--Select box for circle 3-->
+
+
+<p>
+ <!--   <button id="show-palette-btn4" onclick="BGC(this)">Coul-Fond: </button>-->
+  <label for="couleursfond">    Coul-Fond:  </label>
+  <select id="couleursfond" onchange="BGC(this)">
+    <option value="rgba(0, 0, 0, 1)">Noir</option>
+    <option value="rgba(40, 40, 40, 1)">Gris</option>
+    <option value="rgba(0, 0, 70, 1)">Bleu</option>
+    <option value="rgba(60, 0, 0, 1)">Rouge</option>
+    <option value="rgba(0, 40, 0, 1)">vert</option>
+    <option value="rgba(60, 30, 0, 1)">Marron</option>
+    <option value="rgba(0, 60, 60, 1)">Turquoise</option>
+    <option value="rgba(60, 0, 60, 1)">Rose</option>
+    <option value="rgba(60, 0, 100, 1)">Violet</option>
+  </select>
+    <!--Select box for backround-->
+      <p>
+         
+        <p>
+           
+        <p>
+      <b>            Crée par Microsoft pour Windows 11  </b>Modifier/Nettoyer par <a href="https://www.youtube.com/channel/UCTL3fXI8aZnYweRvys6m2bA?view_as=subscriber" style="color: yellow;">Polocrafting</a> 
+
+  </header>
+  </div>
+
+</html>
