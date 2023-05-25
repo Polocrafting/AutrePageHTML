@@ -1,0 +1,310 @@
+<style>
+
+#window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -30%);
+  border: 2px solid #333;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  background-color: yellow;
+  border-radius: 10px;
+}
+
+.title-bar {
+    background-image: url("https://zupimages.net/up/23/01/gthx.png");
+  background-position: right;
+  position: relative;
+
+  height: 30px;
+  background-color: rgba(102, 102, 102, 0.5);
+  color: black;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#window2 {
+  position: absolute;
+  top: 10%;
+
+  transform: translate(1%, -50%);
+ 
+
+  border: 2px solid #333;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  background-color: white;
+  border-radius: 10px;
+}
+
+.title-bar2 {
+      background-image: url("https://zupimages.net/up/23/01/gthx.png");
+  background-position: right;
+  position: relative;
+
+
+  height: 30px;
+  background-color: rgba(102, 102, 102, 0.5);
+  color: Black;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content2 {
+  position: relative;
+  padding: 30px;
+  font-weight: bold;
+  color: Blue;
+  font-size: 20px;
+}
+#window3 {
+  position: absolute;
+
+  top: 1%;
+  left:100%;
+  transform: translate(-103%, 1%);
+
+ 
+
+  border: 2px solid #333;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  background-color: white;
+  border-radius: 10px;
+}
+
+.title-bar3 {
+      background-image: url("https://zupimages.net/up/23/01/gthx.png");
+  background-position: right;
+  position: relative;
+
+
+  height: 30px;
+  background-color: rgba(102, 102, 102, 0.5);
+  color: Black;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content3 {
+  position: relative;
+  padding: 30px;
+  font-weight: bold;
+  color: Blue;
+  font-size: 20px;
+}
+#window4 {
+  position: absolute;
+
+  top: 60%;
+  left:90%;
+  width: 20%;
+  transform: translate(-103%, 1%);
+
+ 
+
+  border: 2px solid #333;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  background-color: white;
+  border-radius: 10px;
+}
+
+.title-bar4 {
+      background-image: url("https://zupimages.net/up/23/01/gthx.png");
+  background-position: right;
+  position: relative;
+
+
+  height: 30px;
+  background-color: rgba(102, 102, 102, 0.5);
+  color: Black;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content4 {
+  position: relative;
+  padding: 30px;
+  font-weight: bold;
+  color: Blue;
+  font-size: 20px;
+}
+.content {
+  position: relative;
+  padding: 30px;
+  font-weight: bold;
+  color: Red;
+  font-size: 30px;
+}
+p1{
+  position: relative;
+  padding: 30px;
+  font-weight: normal;
+  color: black;
+  font-size: 25px;
+
+}
+img{
+position: absolute;
+bottom: 0;
+left: 0;
+}
+body {
+
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+}
+.red-button {
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px; /* Ajout de coins arrondis */
+  font-size: 20px; /* Texte plus gros */
+  display: flex; /* Pour pouvoir utiliser justify-content */
+  align-items: center; /* Pour centrer verticalement les éléments */
+  justify-content: center; /* Pour centrer horizontalement les éléments */
+}
+
+</style>
+
+
+<div id="window">
+  <div class="title-bar">OULA-LA gros virus dans ton ordi !! fait gaffe mon con</div>
+  <div class="content">
+      <div id="FD"></div>
+      <p>Faite attention GrOS VIRUS GROUGROU dans  TON ORDI </p>
+          <p1>Je vous rassure c'est une blague, essayer ce site web sur votre windows 7, MAC, ordi linux et la page change
+  <br> <br>En gros je voulais juste voir à quel point les arnaqueurs pouvais faire mieux...</p1>
+  </div>
+</div>
+<div id="window2">
+  <div class="title-bar2">DEBUG</div>
+  <div class="content2">
+      <div id="NOM">VERSION</div>
+
+  </div>
+</div>
+<img id="image" src=" https://zupimages.net/up/22/52/b1qw.png" alt="site logo" width=100% >
+<button id="goFullScreen" style="display:none;">Afficher en plein écran</button>
+</div>
+<div id="window3">
+  <div class="title-bar3">Vidéo "Explicative"</div>
+  <div class="content3">
+      <div id="NOM"><iframe width="560" height="315" src="https://www.youtube.com/embed/P4vOJxKLOtA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  </div>
+</div>
+<button id="goFullScreen" style="display:none;">Afficher en plein écran</button>
+</div>
+<div id="window4">
+  <div class="title-bar4">Abonne-Toi !</div>
+  <div class="content4">
+
+<a href="https://www.youtube.com/channel/UCTL3fXI8aZnYweRvys6m2bA?view_as=subscriber">
+  <button class="red-button">
+    Abonnez-vous à ma chaîne YouTube
+  </button>
+</a>
+
+  </div>
+</div>
+
+</div>
+    <script>
+var osName = "";
+var FD = "";
+if (navigator.appVersion.indexOf("Win") != -1) 
+  {
+  if (/Windows NT 6.2/.test(navigator.appVersion)) {
+    FD = "https://wallup.net/wp-content/uploads/2016/07/19/21284-Windows_8.jpg";
+    BD = "https://zupimages.net/up/23/01/uiyg.png";
+    osName = "Windows 8";
+  } else if (/Windows NT 6.1/.test(navigator.appVersion)) {
+    FD = "https://th.bing.com/th/id/R.da288dceaafd7c97f1b09c594eac7868?rik=fuoxfl5tOiXWeQ&riu=http%3a%2f%2fstatic.pinnula.fr%2fnews%2fi%2fofficial-wallpaper-windows-7.jpg&ehk=yUvzliJ9Y%2fAf3Pxh8QFZtgih08sRUr6lAuK6tUHseHM%3d&risl=&pid=ImgRaw&r=0";
+    osName = "Windows 7";
+    BD ="https://zupimages.net/up/23/01/jo58.png";
+  } else if (/Windows NT 6.0/.test(navigator.appVersion)) {
+    FD = "https://th.bing.com/th/id/OIP.ZmlX_X0KeFrhXgCN6b-RvAHaEK?pid=ImgDet&rs=1";
+    osName = "Windows vista";
+  } else if (/Windows NT 5.1/.test(navigator.appVersion)) {
+    FD = "https://images2.alphacoders.com/941/thumb-1920-941898.jpg";
+    osName = "Windows XP";
+  } else if (/Windows NT 10.0/.test(navigator.appVersion)) {
+    FD = "https://c.wallhere.com/photos/d6/29/Windows_10_4K-1910547.jpg!d";
+    osName = "Windows 10/11";
+    BD = "https://zupimages.net/up/23/01/1sbs.png";
+
+  } else {
+    FD = "https://th.bing.com/th/id/OIP.XI0axtx3g5Yvr-qW2PyWwwHaEK?pid=ImgDet&rs=1";
+    osName = "Version Inconue";
+  }
+}
+
+if (navigator.platform.indexOf("Mac") != -1) {
+  if (/Mac OS X 10_6/.test(navigator.userAgent)) {
+    osName = "Mac OS X Snow Leopard";
+    FD = "https://wallpapercave.com/wp/gdyKizy.jpg";
+  } else if (/Mac OS X 10_7/.test(navigator.userAgent)) {
+    osName = "Mac OS X Lion";
+    FD = "https://th.bing.com/th/id/R.3e53afe9f09104d96355b3723fcd40a3?rik=7K%2fcCeIeURlvhA&riu=http%3a%2f%2fwww.hdwallpapers.in%2fdownload%2fmac_os_x_lion-5120x2880.jpg&ehk=W9cy7l92fzlClzpY9uHkxNRYsJ%2f%2fV6nA4ja0Z1d1Mjc%3d&risl=1&pid=ImgRaw&r=0";
+    BD = "https://zupimages.net/up/23/01/8yf2.png"
+  } else if (/Mac OS X 10_11/.test(navigator.userAgent)) {
+    osName = "OS X El Capitan";
+    FD = "https://bc82b876ab9e3690d8fc-f2756bba1e0eeb239eb478f44992320c.ssl.cf1.rackcdn.com/wallpaper-os-x-el-capitan-mac1443535516441.jpg";
+    BD = "https://zupimages.net/up/23/01/8yf2.png"
+  } else {
+    osName = "MacOS";
+    FD = "https://th.bing.com/th/id/R.fc4757df3a9dc9d0f9e5430afd38b62f?rik=EDZIC7OcZFPOBg&pid=ImgRaw&r=0";
+    BD = "hhttps://zupimages.net/up/23/01/8yf2.png"
+  }
+}
+
+if (navigator.platform.indexOf("Linux") != -1) {
+  if (/Ubuntu/.test(navigator.userAgent)) {
+    osName = "Ubuntu";
+    FD = "https://th.bing.com/th/id/R.06526a2aaf6669b56fd4488092a235ee?rik=59jR6WQ2aWeSLg&riu=http%3a%2f%2fubuntuhandbook.org%2fwp-content%2fuploads%2f2015%2f09%2fubuntu15.04-wallpaper.jpg&ehk=A5BixjG5t92DeqqF5%2bR5Vk1zarI57VIY0h3%2b%2fvgmYeo%3d&risl=&pid=ImgRaw&r=0";
+    BD = "https://zupimages.net/up/23/01/o87s.png";
+  } else {
+    osName = "Linux";
+    FD = "https://th.bing.com/th/id/R.06526a2aaf6669b56fd4488092a235ee?rik=59jR6WQ2aWeSLg&riu=http%3a%2f%2fubuntuhandbook.org%2fwp-content%2fuploads%2f2015%2f09%2fubuntu15.04-wallpaper.jpg&ehk=A5BixjG5t92DeqqF5%2bR5Vk1zarI57VIY0h3%2b%2fvgmYeo%3d&risl=&pid=ImgRaw&r=0";
+    BD ="https://zupimages.net/up/23/01/o87s.png";}
+}
+
+document.getElementById("NOM").innerHTML = "</span>" + navigator.appVersion +  "<br>" + osName + "</span>";
+
+
+document.body.style.backgroundImage = "url('" + FD + "')";
+ document.getElementById("image").src = BD;
+
+
+document.addEventListener("click", function() {
+
+  var element = document.documentElement;
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
+);
+
+
+    </script>
+
+
